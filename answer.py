@@ -46,6 +46,8 @@ def get_answer(question):
     # 找到第一个符合的
     soup = BeautifulSoup(resp.text, 'lxml')
     answer = soup.find("a", {"class": "ti"})
+    if answer is None:
+      return ""
     href = answer.attrs["href"]
     return get_question_answer(href)
 
