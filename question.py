@@ -48,8 +48,8 @@ def get_questions(max_page=30):
         pages = max_page
 
     page = 0
-    while page <= pages:
-        print("正在获取第 {} 页的问题id".format(page + 1))
+    while page < pages:
+        print("正在获取第 {} 页的问题 id".format(page + 1))
         # 构造每一页
         resp = requests.get(url.format(page * 40), headers=headers)
         if not resp.ok:
